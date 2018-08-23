@@ -1,7 +1,6 @@
 
 ### 机器学习入门阶段资料进度汇总
-### 跟随100天机器学习计划安排
-### 其中图片及代码
+### 跟随100天机器学习计划安排,其中图片及代码
 ### English Edition请移步[Avik-Jain](https://github.com/Avik-Jain/100-Days-Of-ML-Code)汉化版翻译小组请见[这里](https://github.com/MachineLearning100/100-Days-Of-ML-Code)
 
 # 目录
