@@ -1,5 +1,5 @@
 
-### 此处为个人机器学习入门汇总
+### 机器学习入门阶段资料进度汇总
 ### 跟随100天机器学习计划安排
 ### 其中图片及代码
 ### English Edition请移步[Avik-Jain](https://github.com/Avik-Jain/100-Days-Of-ML-Code)
