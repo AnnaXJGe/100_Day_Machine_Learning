@@ -413,6 +413,24 @@ plt.show()
 
 ## 支持向量机(SVM)的实现 | 第14天
 在线性相关数据上实现了SVM。使用Scikit-Learn库。在scikit-learn中我们有SVC分类器，我们用它来完成这个任务。将在下一次实现时使用kernel-trick。Python代码见[此处](https://github.com/MachineLearning100/100-Days-Of-ML-Code/blob/master/Code/Day%2013_SVM.py),Jupyter notebook见[此处](https://github.com/MachineLearning100/100-Days-Of-ML-Code/blob/master/Code/Day%2013_SVM.ipynb)。
+朴素贝叶斯分类器
+用条件概率预测标签值
+朴素的假设是其特征在统计学上是独立的，事实证明，即使在不完全正确的情况下它也能很好的运作。
+优点：
+1）可以适用于少量训练数据（比如相当多的特征，问题复杂，却没有足够多的可训练的案例）----条件概率，最大程度利用信息
+2）自我进行正则化（概率必须位于0和1之间）
+3）高效和高度的可扩展性----用于超大型计算
+概率链式法则: 
+p(x1,x2,x3,,,xn,Ck)=p(x1,x2,x3,,,xn|Ck)p(x2,x3,,,xn,Ck)
+                              =p(x1,x2,x3,,,xn|Ck)p(x2,x3,,,xn|Ck)p(x3,,,xn,Ck)
+                              =p(x1,x2,x3,,,xn|Ck)p(x2,x3,,,xn|Ck)p(x3,,,xn|Ck)...p(xn|Ck)
+                              (如果x1,x2,x3,xn相互独立----朴素)
+                              =p(x1|Ck)p(x2|Ck)...p(xn|Ck)  =	 Π i P ( xi | Ck)
+p(Ck|x1,x2,x3,,,xn)=(1/z)p(Ck)*Π i P ( xi | Ck)----------1/z是规范化
+陷阱一：发生下溢（如果P ( xi | Ck)过小）
+解决方案-----取对数
+陷阱二：条件概率为0，对数不存在
+解决方案：Laplace smoother 拉普拉斯平滑器
 
 ## 朴素贝叶斯分类器(Naive Bayes Classifier)和黑盒机器学习(Black Box Machine Learning) | 第15天
 学习不同类型的朴素贝叶斯分类器同时开始<a href="https://bloomberg.github.io/foml/#home">Bloomberg</a>的课程。课程列表中的第一个是黑河机器学习。它给出了预测函数，特征提取，学习算法，性能评估，交叉验证，样本偏差，非平稳性，过度拟合和超参数调整的整体观点。
